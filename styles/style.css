@@ -17,4 +17,464 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-primary, 'Inter', 'Helvetica Neue', Arial, sans-serif);
+  font-style: normal;
+  background-color: var(--color-background, #ffffff);
+  background-image: repeating-linear-gradient(
+      90deg,
+      var(--line-color, #d3d3d3) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--line-color, #d3d3d3) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--gradient-color-start, #e7e7e7) 0.01%,
+      var(--gradient-color-end, #1a1a1a) 2px 4px
+    );
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color-accent, #000000);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Шапка сайта */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background, #ffffff);
+  border: 2px solid var(--color-accent, #000000);
+  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-variation-settings: "wght" var(--card-text-weight, 400);
+  text-transform: uppercase;
+  margin: 100px 0;
+  padding: clamp(120px, 9vw + 10px, 136px) clamp(14px, 4vw + 10px, 120px)
+    clamp(24px, 2vw + 10px, 21px);
+}
+
+.content-width {
+  width: clamp(375px, 50vw + 100px, 696px);
+}
+
+.logo-group {
+  text-align: center;
+}
+
+.logo-group__link {
+  font-size: clamp(49px, 5vw + 10px, 65px);
+  line-height: clamp(49px, 5vw + 10px, 65px);
+  text-decoration: none;
+}
+
+.logo-group__link:focus-visible {
+  outline: none;
+}
+
+.logo-group__title {
+  font-size: clamp(14px, 2vw + 6.5px, 23px);
+  line-height: clamp(14px, 2vw + 6.5px, 23px);
+  margin: 22px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-inline-start: 19px;
+}
+
+.theme-menu__button {
+  position: relative;
+  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover,
+.theme-menu__button:focus,
+.theme-menu__button:focus-visible,
+.theme-menu__button:disabled {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  animation: move-arrow 0.5s ease-in-out infinite alternate;
+}
+
+/* Основной контент */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 49px;
+}
+
+.card {
+  background-color: var(--color-background, #ffffff);
+  color: var(--color-accent, #000000);
+  border: 2px solid var(--color-accent, #000000);
+  font-family: var(--font-primary, 'Inter', 'Helvetica Neue', Arial, sans-serif);
+}
+
+.card__title {
+  font-variation-settings: "wght" var(--card-title-weight, 700);
+  font-size: 18px;
+  line-height: 22px;
+  padding: 6px 11px 4px;
+}
+
+.card__image-wrapper {
+  position: relative;
+  border-top: 2px solid var(--color-accent, #000000);
+  border-bottom: 2px solid var(--color-accent, #000000);
+}
+
+.card__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: clamp(371px, 48.6vw, 700px);
+  height: clamp(371px, 48.6vw, 700px);
+}
+
+/* Фильтры */
+.image-start {
+  filter: brightness(0.9) contrast(0.7) sepia(0.3);
+}
+
+.image-fear {
+  filter: grayscale(0.7) blur(1px);
+}
+
+.image-first-project {
+  filter: saturate(3.1) hue-rotate(-27deg);
+}
+
+.image-second-sprint {
+  filter: contrast(1.1) sepia(0.2) brightness(0.5);
+}
+
+.image-support {
+  filter: grayscale(0.5) contrast(1.2);
+}
+
+.image-new-challenges {
+  filter: hue-rotate(15deg) brightness(0.9) contrast(1.3);
+}
+
+.image-concentration {
+  filter: brightness(1.1) saturate(1.7) sepia(0.1) contrast(0.8);
+}
+
+.image-reflection {
+  filter: grayscale(0.3) blur(0.5px) contrast(1.2);
+}
+
+.card__label {
+  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-weight: var(--card-text-weight, 400);
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: var(--color-accent, #000000);
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  text-shadow: 1px 0px var(--color-background, #ffffff), 0px -1px var(--color-background, #ffffff);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+}
+
+@supports (-webkit-text-stroke: 1px var(--color-background, #ffffff)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--color-background, #ffffff);
+  }
+}
+
+.card__description {
+  font-variation-settings: "wght" var(--card-text-weight, 400);
+  font-size: 18px;
+  line-height: 21px;
+  padding: 22px 64px 22px 28px;
+}
+
+.card__description-text {
+  margin-bottom: 27px;
+}
+
+.card__description-text:last-child {
+  margin-bottom: 0;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3px 27px 26px;
+  gap: 5px;
+}
+
+.card__icon-button {
+  background-color: var(--color-background, #ffffff);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  padding: 0;
+  max-height: 38px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--color-accent, #000000);
+}
+
+.heart {
+  transition: fill 0.3s linear;
+}
+
+.contour {
+  fill: var(--color-contour, #000000);
+}
+
+.main-body {
+  fill: none;
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: none;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .contour,
+.like-icon:hover .core,
+.like-icon:hover .main-body {
+  fill: var(--color-contour, #000000);
+}
+
+.like-icon:hover .main-body {
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body,
+.like-icon:active .core {
+  fill: var(--color-heart-fill, #FF0000);
+}
+
+.like-icon .sparks {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--color-heart-fill, #FF0000);
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--color-heart-fill, #FF0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-heart-fill, #FF0000 );
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-flash 0.3s ease-in 0.3s forwards;
+}
+
+.like-icon:not(.is-liked) .contour {
+  fill: var(--color-contour, #000000);
+  transition: fill 0.1s linear;
+}
+
+.like-icon:not(.is-liked) .sparks {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--color-background, #ffffff);
+  border: 2px solid var(--color-accent, #000000);
+  overflow: hidden;
+  padding: 0;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent, #000000);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-accent, #000000);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.card__like-button {
+  min-width: 130px;
+  max-height: 38px;
+}
+
+.button__text {
+  position: relative;
+  font-family: var(--font-accent,  'PressStart2P', 'Courier New', monospace);
+  font-weight: var(--card-text-weight, 400);
+  font-size: 14px;
+  line-height: 90%;
+  color: var(--color-blend-text, #ffffff);
+  mix-blend-mode: difference;
+  transition: color 0.5s ease;
+}
+
+.button__save {
+  min-width: 335px;
+  min-height: 55px;
+  margin-bottom: 100px;
+  gap: 6px;
+}
+
+.button__icon {
+  width: 21px;
+  height: 21px;
+  color: var(--color-blend-text, #ffffff);
+  mix-blend-mode: difference;
+}
+
+dialog {
+  display: none;
+}
+
+dialog[open] {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: 353px;
+  border: 2px solid var(--color-accent, #000000);
+  padding: 28px;
+  background-color: var(--color-background, #ffffff);
+  text-transform: uppercase;
+  gap: 34px 29px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.dialog-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  gap: 21px;
+  align-items: center;
+}
+
+.dialog__icon {
+  width: 39px;
+  height: 39px;
+  color: var(--color-accent, #000000);
+}
+
+.dialog__button {
+  grid-column: 1 / -1;
+  padding: 10px;
+}
+
+.dialog__text {
+  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-weight: var(--card-text-weight, 400);
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-accent, #000000);
+}
+
+@media (width <= 375px) {
+  .content-width {
+    width: 100%;
+  }
+
+  .logo-group__title {
+    margin: 20px;
+  }
+
+  .card__description {
+    padding: 26px 51px 22px 25px;
+  }
+
+  .button__save {
+    flex-direction: column;
+    align-items: center;
+  }
 }

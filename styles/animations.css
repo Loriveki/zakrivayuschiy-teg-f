@@ -12,3 +12,42 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* Анимация движения стрелки */
+@keyframes move-arrow {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(-16px);
+  }
+}
+
+/* Анимация масштабирования сердца */
+@keyframes heart-scale {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  50% {
+    transform: scale(1.5);
+    transform-origin: center;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: center;
+  }
+}
+
+/* Анимация искр */
+@keyframes sparks-flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
