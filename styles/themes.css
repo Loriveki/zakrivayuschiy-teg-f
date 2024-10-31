@@ -5,53 +5,45 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 :root.theme-dark {
-    --color-background: #000000; 
-    --color-accent: #00CC14 ;
+  --color-background: #000000;
+  --color-accent: #00cc14;
+  --card-text-weight: 465;
+  --card-title-weight: 785;
+  --line-color: #000000;
+  --gradient-color-start: #007f0c;
+  --gradient-color-end: #004306;
+  --color-blend-text: #00cc14;
+  --color-contour: #00cc14;
+  --color-sparks: #ff0000;
+  --color-heart-fill: #ff0000;
+}
+
+:root.theme-light {
+  --color-background: #ffffff;
+  --color-accent: #000000;
+  --card-text-weight: 400;
+  --card-title-weight: 700;
+  --line-color: #d3d3d3;
+  --gradient-color-start: #e7e7e7;
+  --gradient-color-end: #1a1a1a;
+  --color-blend-text: #ffffff;
+  --color-contour: #000000;
+  --color-sparks: #ff0000;
+  --color-heart-fill: #ff0000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000000;
+    --color-accent: #00cc14;
     --card-text-weight: 465;
     --card-title-weight: 785;
     --line-color: #000000;
     --gradient-color-start: #007f0c;
     --gradient-color-end: #004306;
-    --color-blend-text: #00CC14;
-    --color-contour: #00CC14;
-    --color-sparks: #ff0000; 
+    --color-blend-text: #00cc14;
+    --color-contour: #00cc14;
+    --color-sparks: #ff0000;
     --color-heart-fill: #ff0000;
   }
-
-
-
-:root.theme-light {
-    --color-background: #ffffff; 
-    --color-accent: #000000;
-    --card-text-weight: 400;
-    --card-title-weight: 700;
-    --line-color: #d3d3d3;
-    --gradient-color-start: #e7e7e7;
-    --gradient-color-end: #1a1a1a;
-    --color-blend-text: #ffffff;
-    --color-contour: #000000; 
-    --color-sparks: #ff0000; 
-    --color-heart-fill: #ff0000;
-  }
-  
-
-  
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-background: #000000; 
-      --color-accent: #00CC14 ;
-      --card-text-weight: 465;
-      --card-title-weight: 785;
-      --line-color: #000000;
-      --gradient-color-start: #007f0c;
-      --gradient-color-end: #004306;
-      --color-blend-text: #00CC14;
-      --color-contour: #00CC14;
-      --color-sparks: #ff0000; 
-      --color-heart-fill: #ff0000;
-    }
-  }
-
-
-
-  
+}

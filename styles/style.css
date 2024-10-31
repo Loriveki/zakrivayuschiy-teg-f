@@ -17,7 +17,13 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-primary, 'Inter', 'Helvetica Neue', Arial, sans-serif);
+  font-family: var(
+    --font-primary,
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif
+  );
   font-style: normal;
   background-color: var(--color-background, #ffffff);
   background-image: repeating-linear-gradient(
@@ -50,7 +56,7 @@
   align-items: center;
   background-color: var(--color-background, #ffffff);
   border: 2px solid var(--color-accent, #000000);
-  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
   font-variation-settings: "wght" var(--card-text-weight, 400);
   text-transform: uppercase;
   margin: 100px 0;
@@ -59,7 +65,7 @@
 }
 
 .content-width {
-  width: clamp(375px, 50vw + 100px, 696px);
+  inline-size: clamp(377px, 50vw + 100px, 696px);
 }
 
 .logo-group {
@@ -91,7 +97,7 @@
 
 .theme-menu__button {
   position: relative;
-  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
@@ -115,10 +121,10 @@
 .theme-menu__button::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
+  inset-inline-start: 0;
+  inset-block-end: -2px;
+  inline-size: 100%;
+  block-size: 2px;
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: left;
@@ -145,14 +151,20 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 49px;
+  gap: 50px;
 }
 
 .card {
   background-color: var(--color-background, #ffffff);
   color: var(--color-accent, #000000);
   border: 2px solid var(--color-accent, #000000);
-  font-family: var(--font-primary, 'Inter', 'Helvetica Neue', Arial, sans-serif);
+  font-family: var(
+    --font-primary,
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif
+  );
 }
 
 .card__title {
@@ -164,16 +176,16 @@ main {
 
 .card__image-wrapper {
   position: relative;
-  border-top: 2px solid var(--color-accent, #000000);
-  border-bottom: 2px solid var(--color-accent, #000000);
+  border-block-start: 2px solid var(--color-accent, #000000);
+  border-block-end: 2px solid var(--color-accent, #000000);
 }
 
 .card__image {
   display: block;
   object-fit: cover;
   object-position: center;
-  width: clamp(371px, 48.6vw, 700px);
-  height: clamp(371px, 48.6vw, 700px);
+  inline-size: clamp(371px, 50vw + 100px, 696px);
+  block-size: clamp(371px, 50vw + 100px, 696px);
 }
 
 /* Фильтры */
@@ -210,16 +222,17 @@ main {
 }
 
 .card__label {
-  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
+  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
   font-weight: var(--card-text-weight, 400);
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
   color: var(--color-accent, #000000);
   position: absolute;
-  top: 27px;
-  right: 27px;
-  text-shadow: 1px 0px var(--color-background, #ffffff), 0px -1px var(--color-background, #ffffff);
+  inset-block-start: 27px;
+  inset-inline-end: 27px;
+  text-shadow: 1px 0px var(--color-background, #ffffff),
+    0px -1px var(--color-background, #ffffff);
   mix-blend-mode: hard-light;
   opacity: 0.5;
 }
@@ -231,25 +244,31 @@ main {
   }
 }
 
+.card__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
+  padding: 26px;
+}
+
 .card__description {
   font-variation-settings: "wght" var(--card-text-weight, 400);
   font-size: 18px;
   line-height: 21px;
-  padding: 22px 64px 22px 28px;
+  padding-inline-end: 33px;
 }
 
 .card__description-text {
-  margin-bottom: 27px;
+  margin-block-end: 26px;
 }
 
 .card__description-text:last-child {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 .card__buttons {
   display: flex;
   justify-content: flex-end;
-  margin: 3px 27px 26px;
   gap: 5px;
 }
 
@@ -259,7 +278,7 @@ main {
   cursor: pointer;
   transition: border-color 0.3s ease;
   padding: 0;
-  max-height: 38px;
+  max-block-size: 38px;
 }
 
 .card__icon-button:focus {
@@ -304,7 +323,7 @@ main {
 
 .like-icon:active .main-body,
 .like-icon:active .core {
-  fill: var(--color-heart-fill, #FF0000);
+  fill: var(--color-heart-fill, #ff0000);
 }
 
 .like-icon .sparks {
@@ -314,17 +333,12 @@ main {
 
 .like-icon.is-liked .core,
 .like-icon.is-liked .main-body {
-  fill: var(--color-heart-fill, #FF0000);
-}
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body {
-  fill: var(--color-heart-fill, #FF0000);
+  fill: var(--color-heart-fill, #ff0000);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--color-heart-fill, #FF0000 );
+  fill: var(--color-heart-fill, #ff0000);
   transition: fill 0.3s 0.06s linear;
 }
 
@@ -371,10 +385,10 @@ main {
 .button::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  block-size: 100%;
+  inline-size: 100%;
   background-color: var(--color-accent, #000000);
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
@@ -385,13 +399,13 @@ main {
 }
 
 .card__like-button {
-  min-width: 130px;
-  max-height: 38px;
+  min-inline-size: 130px;
+  max-block-size: 38px;
 }
 
 .button__text {
   position: relative;
-  font-family: var(--font-accent,  'PressStart2P', 'Courier New', monospace);
+  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
   font-weight: var(--card-text-weight, 400);
   font-size: 14px;
   line-height: 90%;
@@ -401,15 +415,15 @@ main {
 }
 
 .button__save {
-  min-width: 335px;
-  min-height: 55px;
-  margin-bottom: 100px;
+  min-inline-size: 335px;
+  min-block-size: 55px;
+  margin-block-end: 100px;
   gap: 6px;
 }
 
 .button__icon {
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
   color: var(--color-blend-text, #ffffff);
   mix-blend-mode: difference;
 }
@@ -421,7 +435,7 @@ dialog {
 dialog[open] {
   display: grid;
   grid-template-columns: auto 1fr;
-  max-width: 353px;
+  max-inline-size: clamp(341px, 90%, 353px);
   border: 2px solid var(--color-accent, #000000);
   padding: 28px;
   background-color: var(--color-background, #ffffff);
@@ -430,7 +444,7 @@ dialog[open] {
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.6); 
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .dialog-content {
@@ -442,8 +456,16 @@ dialog::backdrop {
 }
 
 .dialog__icon {
-  width: 39px;
-  height: 39px;
+  inline-size: 39px;
+  block-size: 39px;
+  color: var(--color-accent, #000000);
+}
+
+.dialog__text {
+  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
+  font-weight: var(--card-text-weight, 400);
+  font-size: 14px;
+  line-height: 150%;
   color: var(--color-accent, #000000);
 }
 
@@ -452,29 +474,29 @@ dialog::backdrop {
   padding: 10px;
 }
 
-.dialog__text {
-  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
-  font-weight: var(--card-text-weight, 400);
-  font-size: 14px;
-  line-height: 150%;
-  color: var(--color-accent, #000000);
-}
-
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .content-width {
-    width: 100%;
-  }
-
-  .logo-group__title {
-    margin: 20px;
+    inline-size: 100%;
   }
 
   .card__description {
-    padding: 26px 51px 22px 25px;
+    padding-inline-end: 25px;
   }
 
   .button__save {
+    min-inline-size: 306px;
+    min-block-size: 84px;
     flex-direction: column;
     align-items: center;
+  }
+
+  .button__icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  dialog[open] {
+    padding: 33px 40px;
+    gap: 30px 0px;
   }
 }

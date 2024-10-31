@@ -1,29 +1,27 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    /* Основной шрифт и акцентный шрифт */
-    --font-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    --font-accent: 'PressStart2P', 'Courier New', monospace;
+  /* Основной шрифт и акцентный шрифт */
+  --font-primary: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-accent: "PressStart2P", "Courier New", monospace;
 
-    /* Переменные для толщины текста и заголовков карточек */
-    --card-text-weight: 400;
-    --card-title-weight: 700;
+  /* Переменные для толщины текста и заголовков карточек */
+  --card-text-weight: 400;
+  --card-title-weight: 700;
 
-    /* Цветовые переменные */
-    --color-background: #ffffff;
-    --color-accent: #000000;
+  /* Цветовые переменные */
+  --color-background: #ffffff;
+  --color-accent: #000000;
 
-    /* Линии для фона */
-    --line-color: #d3d3d3;
-    --gradient-color-start: #e7e7e7;
-    --gradient-color-end: #1a1a1a;
+  /* Линии для фона */
+  --line-color: #d3d3d3;
+  --gradient-color-start: #e7e7e7;
+  --gradient-color-end: #1a1a1a;
 
-    /* Цвет для кнопки */
-    --color-blend-text: #ffffff;
+  /* Цвет для кнопки */
+  --color-blend-text: #ffffff;
 
-    /* Сердечко */
-    --color-contour: #000000; 
-    --color-sparks: #ff0000; 
-    --color-heart-fill: #FF0000; 
-}   
-
-
+  /* Сердечко */
+  --color-contour: #000000;
+  --color-sparks: #ff0000;
+  --color-heart-fill: #ff0000;
+}
