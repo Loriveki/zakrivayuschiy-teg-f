@@ -1,8 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   /* Основной шрифт и акцентный шрифт */
-  --font-primary: "Inter", "Helvetica Neue", Arial, sans-serif;
-  --font-accent: "PressStart2P", "Courier New", monospace;
+  --font-primary: "Inter-Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-accent: "PressStart2P", "Papyrus", fantasy;
 
   /* Переменные для толщины текста и заголовков карточек */
   --card-text-weight: 400;

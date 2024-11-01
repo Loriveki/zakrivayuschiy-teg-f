@@ -19,27 +19,28 @@
   min-block-size: 100dvb;
   font-family: var(
     --font-primary,
-    "Inter",
+    "Inter-Variable",
     "Helvetica Neue",
     Arial,
     sans-serif
   );
+  font-variation-settings: "wght" var(--card-text-weight, 400);
   font-style: normal;
   background-color: var(--color-background, #ffffff);
   background-image: repeating-linear-gradient(
-      90deg,
+      to right,
       var(--line-color, #d3d3d3) 0 2px,
       transparent 2px 4px
     ),
     repeating-linear-gradient(
-      180deg,
+      to bottom,
       var(--line-color, #d3d3d3) 0 2px,
       transparent 2px 4px
     ),
     repeating-linear-gradient(
       to bottom,
       var(--gradient-color-start, #e7e7e7) 0.01%,
-      var(--gradient-color-end, #1a1a1a) 2px 4px
+      var(--gradient-color-end, #1a1a1a)
     );
   background-size: cover;
   background-attachment: fixed;
@@ -56,12 +57,12 @@
   align-items: center;
   background-color: var(--color-background, #ffffff);
   border: 2px solid var(--color-accent, #000000);
-  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
-  font-variation-settings: "wght" var(--card-text-weight, 400);
+  font-family: var(--font-accent, "PressStart2P", "Papyrus", fantasy);
+  font-weight: var(--card-text-weight, 400);
   text-transform: uppercase;
   margin: 100px 0;
   padding: clamp(120px, 9vw + 10px, 136px) clamp(14px, 4vw + 10px, 120px)
-    clamp(24px, 2vw + 10px, 21px);
+  clamp(20px, 2vw + 10px, 20px);
 }
 
 .content-width {
@@ -91,13 +92,13 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
   padding-inline-start: 19px;
 }
 
 .theme-menu__button {
   position: relative;
-  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
+  font-family: var(--font-accent, "PressStart2P", "Papyrus", fantasy);
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
@@ -120,10 +121,7 @@
 
 .theme-menu__button::after {
   content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  inset-block-end: -2px;
-  inline-size: 100%;
+  display: block;
   block-size: 2px;
   background-color: currentColor;
   transform: scaleX(0);
@@ -151,7 +149,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 51px;
 }
 
 .card {
@@ -160,7 +158,7 @@ main {
   border: 2px solid var(--color-accent, #000000);
   font-family: var(
     --font-primary,
-    "Inter",
+    "Inter-Variable",
     "Helvetica Neue",
     Arial,
     sans-serif
@@ -189,48 +187,48 @@ main {
 }
 
 /* Фильтры */
-.image-start {
+.image-brightness-contrast-sepia {
   filter: brightness(0.9) contrast(0.7) sepia(0.3);
 }
 
-.image-fear {
+.image-grayscale-blur {
   filter: grayscale(0.7) blur(1px);
 }
 
-.image-first-project {
+.image-saturate-hue-rotate {
   filter: saturate(3.1) hue-rotate(-27deg);
 }
 
-.image-second-sprint {
+.image-contrast-sepia-brightness {
   filter: contrast(1.1) sepia(0.2) brightness(0.5);
 }
 
-.image-support {
+.image-grayscale-contrast {
   filter: grayscale(0.5) contrast(1.2);
 }
 
-.image-new-challenges {
+.image-hue-rotate-brightness-contrast {
   filter: hue-rotate(15deg) brightness(0.9) contrast(1.3);
 }
 
-.image-concentration {
+.image-brightness-saturate-sepia-contrast {
   filter: brightness(1.1) saturate(1.7) sepia(0.1) contrast(0.8);
 }
 
-.image-reflection {
+.image-grayscale-blur-contrast {
   filter: grayscale(0.3) blur(0.5px) contrast(1.2);
 }
 
 .card__label {
-  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
+  font-family: var(--font-accent, "PressStart2P", "Papyrus", fantasy);
   font-weight: var(--card-text-weight, 400);
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
   color: var(--color-accent, #000000);
   position: absolute;
-  inset-block-start: 27px;
-  inset-inline-end: 27px;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
   text-shadow: 1px 0px var(--color-background, #ffffff),
     0px -1px var(--color-background, #ffffff);
   mix-blend-mode: hard-light;
@@ -248,18 +246,16 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 25px;
-  padding: 26px;
+  padding: 25px;
 }
 
 .card__description {
-  font-variation-settings: "wght" var(--card-text-weight, 400);
   font-size: 18px;
   line-height: 21px;
-  padding-inline-end: 33px;
 }
 
 .card__description-text {
-  margin-block-end: 26px;
+  margin-block-end: 27px;
 }
 
 .card__description-text:last-child {
@@ -276,7 +272,7 @@ main {
   background-color: var(--color-background, #ffffff);
   border: 2px solid transparent;
   cursor: pointer;
-  transition: border-color 0.3s ease;
+  transition: fill 0.3s ease;
   padding: 0;
   max-block-size: 38px;
 }
@@ -298,12 +294,12 @@ main {
 }
 
 .main-body {
-  fill: none;
+  fill: transparent;
   transition: fill 0.3s linear;
 }
 
 .core {
-  fill: none;
+  fill: transparent;
   transition: fill 0.3s linear 0.03s;
 }
 
@@ -405,7 +401,7 @@ main {
 
 .button__text {
   position: relative;
-  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
+  font-family: var(--font-accent, "PressStart2P", "Papyrus", fantasy);
   font-weight: var(--card-text-weight, 400);
   font-size: 14px;
   line-height: 90%;
@@ -440,11 +436,11 @@ dialog[open] {
   padding: 28px;
   background-color: var(--color-background, #ffffff);
   text-transform: uppercase;
-  gap: 34px 29px;
+  gap: 34px 0;
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .dialog-content {
@@ -462,15 +458,20 @@ dialog::backdrop {
 }
 
 .dialog__text {
-  font-family: var(--font-accent, "PressStart2P", "Courier New", monospace);
-  font-weight: var(--card-text-weight, 400);
+  font-family: var(--font-accent, "PressStart2P", "Papyrus", fantasy);
   font-size: 14px;
   line-height: 150%;
   color: var(--color-accent, #000000);
 }
 
-.dialog__button {
+.dialog__form {
   grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+}
+
+.dialog__button {
+  width: 100%;
   padding: 10px;
 }
 
@@ -479,20 +480,31 @@ dialog::backdrop {
     inline-size: 100%;
   }
 
-  .card__description {
-    padding-inline-end: 25px;
-  }
+  main {
+    gap: 48px;
+}
+
+  .card__content {
+    padding: 26px;
+}
+
+.card__label {
+  inset-block-start: 24px;
+  inset-inline-end: 11px;
+}
 
   .button__save {
     min-inline-size: 306px;
     min-block-size: 84px;
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
 
   .button__icon {
     inline-size: 28px;
     block-size: 28px;
+    margin: 9px;
   }
 
   dialog[open] {
